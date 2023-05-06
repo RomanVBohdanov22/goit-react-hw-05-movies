@@ -1,19 +1,5 @@
-/* API Key: c20d992e26e4f0d24c347a36a85c7acc */
-/* https://api.themoviedb.org/3/movie/550?api_key=c20d992e26e4f0d24c347a36a85c7acc */
-/* https://api.themoviedb.org/3/movie/400?api_key=c20d992e26e4f0d24c347a36a85c7acc */
-/*const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjBkOTkyZTI2ZTRmMGQyNGMzNDdhMzZhODVjN2FjYyIsInN1YiI6IjY0NTU0NzU5NzEwODNhMDBlM2Y2ZmM0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.QffZw7Vr_Ul4cqQEDvXNhketX3RjlGUEi8XqjIFuOss'
-  }
-};
-fetch('https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));*
-  */
-
+//import { Route, Routes, Link } from 'react-router-dom';
+//import { Home } from './pages';
 export const App = () => {
   return (
     <div
@@ -30,3 +16,23 @@ export const App = () => {
     </div>
   );
 };
+
+/*
+    <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/movies">Movies</Link>
+        </li>
+      </ul>
+      <Routes>
+        <Route path="/goit-react-hw-05-movies" element={<Home />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieInfo />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+      </Routes>
+*/
