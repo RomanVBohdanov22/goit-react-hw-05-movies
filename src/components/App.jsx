@@ -1,9 +1,9 @@
 import { Route, Routes, Link, Outlet, Navigate } from 'react-router-dom';
-import { Home } from '../pages';
-import { Movies } from '../pages';
-import { MovieDetail } from '../pages';
-import { Cast } from '../pages';
-import { Reviews } from '../pages';
+import { Home } from '../pages/Home';
+import { Movies } from '../pages/Movies';
+import { MovieDetail } from '../pages/MovieDetail';
+import { Cast } from '../pages/Cast';
+import { Reviews } from '../pages/Reviews';
 
 import { routes } from '../routes';
 import * as FilmService from './services/filmesFetch';
@@ -11,6 +11,7 @@ import * as FilmService from './services/filmesFetch';
 const appStyles = {
   height: '100vh',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   fontSize: 40,
@@ -60,6 +61,15 @@ export const App = () => {
   return (
     <div style={appStyles}>
       goit-react-hw-05-movies
+      <ul>
+        <li>
+          <Link to={routes.HOME}>Home</Link>
+        </li>
+        <li>
+          <Link to={routes.MOVIES}>Movies</Link>
+        </li>
+      </ul>
+      <ul></ul>
       {
         <Routes>
           <Route path={routes.HOME} element={<Outlet />} />
@@ -77,17 +87,9 @@ export const App = () => {
 };
 /*
 
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies">Movies</Link>
-        </li>
-      </ul>
 
-      
-    <ul>
+
+
         <li>
           <Link to="/">Home</Link>
         </li>
