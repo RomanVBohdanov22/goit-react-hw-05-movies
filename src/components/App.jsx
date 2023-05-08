@@ -12,17 +12,46 @@ const appStyles = {
 };
 export const App = () => {
   FilmService.getMovieTrending()
-    .then(response => {
-      console.log(response);
+    .then(data => {
+      console.log('data', data);
     })
     .catch(error => {
       console.log(error.message);
     });
-  console.log('test');
+  const query = 'Batman';
+  const testID = 414906;
+  FilmService.getMovieOnQuery(query)
+    .then(data => {
+      console.log(query, data);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+  FilmService.getMovieDetails(testID)
+    .then(data => {
+      console.log(testID, data);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
 
+  FilmService.getMovieCredits(testID)
+    .then(data => {
+      console.log('cred', testID, data);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+
+  FilmService.getMovieRewievs(testID)
+    .then(data => {
+      console.log('rev', testID, data);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
   return <div style={appStyles}>goit-react-hw-05-movies</div>;
 };
-
 /*
     <ul>
         <li>

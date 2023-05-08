@@ -6,10 +6,28 @@ axios.defaults.baseURL = `https://api.themoviedb.org/3/`;
 axios.defaults.params = { api_key: API_KEY };
 
 export const getMovieTrending = async () => {
-  const response = await axios.get(`/trending/movie/week`);
-  console.log(response);
+  const { data } = await axios.get(`/trending/movie/week`);
+  return data;
+};
 
-  return response;
+export const getMovieOnQuery = async query => {
+  const { data } = await axios.get(`/search/movie?query=${query}`);
+  return data;
+};
+
+export const getMovieDetails = async movieId => {
+  const { data } = await axios.get(`/movie/${movieId}`);
+  return data;
+};
+
+export const getMovieCredits = async movieId => {
+  const { data } = await axios.get(`/movie/${movieId}/credits`);
+  return data;
+};
+
+export const getMovieRewievs = async movieId => {
+  const { data } = await axios.get(`/movie/${movieId}/reviews`);
+  return data;
 };
 
 //https://pixabay.com/api/
