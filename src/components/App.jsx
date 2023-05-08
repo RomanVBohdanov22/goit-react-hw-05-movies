@@ -27,14 +27,15 @@ export const App = () => {
       console.log(error.message);
     });
   const query = 'Batman';
-  const testID = 414906;
+
   FilmService.getMovieOnQuery(query)
     .then(data => {
       console.log(query, data);
     })
     .catch(error => {
       console.log(error.message);
-    });
+    }); */
+  const testID = 414906;
   FilmService.getMovieDetails(testID)
     .then(data => {
       console.log(testID, data);
@@ -42,7 +43,7 @@ export const App = () => {
     .catch(error => {
       console.log(error.message);
     });
-
+  /*
   FilmService.getMovieCredits(testID)
     .then(data => {
       console.log('cred', testID, data);
