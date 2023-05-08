@@ -1,5 +1,10 @@
-import { Route, Routes, Link, Outlet } from 'react-router-dom';
-import { Home, Movies, MovieDetail, NotFound } from '../pages';
+import { Route, Routes, Link, Outlet, Navigate } from 'react-router-dom';
+import { Home } from '../pages';
+import { Movies } from '../pages';
+import { MovieDetail } from '../pages';
+import { Cast } from '../pages';
+import { Reviews } from '../pages';
+
 import { routes } from '../routes';
 import * as FilmService from './services/filmesFetch';
 
