@@ -1,9 +1,10 @@
-import { Route, Routes, Link, Outlet, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { Movies } from '../pages/Movies';
 import { MovieDetail } from '../pages/MovieDetail';
 import { Cast } from '../pages/Cast';
 import { Reviews } from '../pages/Reviews';
+import { Layout } from '../layout/Layout';
 
 import { routes } from '../routes';
 import * as FilmService from './services/filmesFetch';
@@ -62,23 +63,15 @@ export const App = () => {
   return (
     <div style={appStyles}>
       goit-react-hw-05-movies
-      <ul>
-        <li>
-          <Link to={routes.HOME}>Home</Link>
-        </li>
-        <li>
-          <Link to={routes.MOVIES}>Movies</Link>
-        </li>
-      </ul>
-      <ul></ul>
       {
         <Routes>
-          <Route path={routes.HOME} element={<Outlet />} />
-          <Route index element={<Home />} />
-          <Route path={routes.MOVIES} element={<Movies />} />
-          <Route path={routes.MOVIES_ID} element={<MovieDetail />}>
-            <Route path={routes.CAST} element={<Cast />} />
-            <Route path={routes.REVIEWS} element={<Reviews />} />
+          <Route path={routes.HOME} element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path={routes.MOVIES} element={<Movies />} />
+            <Route path={routes.MOVIES_ID} element={<MovieDetail />}>
+              <Route path={routes.CAST} element={<Cast />} />
+              <Route path={routes.REVIEWS} element={<Reviews />} />
+            </Route>
           </Route>
           <Route path="*" element={<Navigate to={routes.HOME} replace />} />
         </Routes>
@@ -86,25 +79,33 @@ export const App = () => {
     </div>
   );
 };
+
 /*
 
 
-
-
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies">Movies</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route path="/goit-react-hw-05-movies" element={<Home />}></Route>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:id" element={<MovieInfo />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-      </Routes>
 */
+/*
+      <ul>
+        <li>
+          <Link to={routes.HOME}>Home</Link>
+        </li>
+        <li>
+          <Link to={routes.MOVIES}>Movies</Link>
+        </li>
+      </ul
+*/
+/**
+ <Routes>
+          <Route path={routes.HOME} element={<Layout/>} >
+          <Route index element={<Home />} />
+          <Route path={routes.MOVIES} element={<Movies />} />
+          <Route path={routes.MOVIES_ID} element={<MovieDetail />}>
+            <Route path={routes.CAST} element={<Cast />} />
+            <Route path={routes.REVIEWS} element={<Reviews />} />
+          </Route>
+ </Route
+          <Route path="*" element={<Navigate to={routes.HOME} replace />} />
+        </Routes>
+ 
+ 
+ */
