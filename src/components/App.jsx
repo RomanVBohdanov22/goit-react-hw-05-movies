@@ -1,5 +1,6 @@
 import { Route, Routes, Link } from 'react-router-dom';
-//import { Home } from './pages';
+//import { Home, Movies } from './pages';
+import { routes } from '../routes';
 import * as FilmService from './services/filmesFetch';
 
 const appStyles = {
@@ -11,6 +12,7 @@ const appStyles = {
   color: '#010101',
 };
 export const App = () => {
+  /*
   FilmService.getMovieTrending()
     .then(data => {
       console.log('data', data);
@@ -49,8 +51,18 @@ export const App = () => {
     })
     .catch(error => {
       console.log(error.message);
-    });
-  return <div style={appStyles}>goit-react-hw-05-movies</div>;
+    });*/
+  return (
+    <div style={appStyles}>
+      goit-react-hw-05-movies
+      {/*
+      <Routes>
+        <Route path={routes.HOME} element={<Home />} />
+        <Route path={routes.MOVIES} element={<Movies />} />
+        <Route path="*" element={<NotFound />} />
+  </Routes>*/}
+    </div>
+  );
 };
 /*
     <ul>
