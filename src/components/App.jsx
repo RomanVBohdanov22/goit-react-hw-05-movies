@@ -1,5 +1,5 @@
-import { Route, Routes, Link } from 'react-router-dom';
-//import { Home, Movies } from './pages';
+import { Route, Routes, Link, Outlet } from 'react-router-dom';
+import { Home, Movies, MovieDetail, NotFound } from '../pages';
 import { routes } from '../routes';
 import * as FilmService from './services/filmesFetch';
 
@@ -55,16 +55,33 @@ export const App = () => {
   return (
     <div style={appStyles}>
       goit-react-hw-05-movies
-      {/*
-      <Routes>
-        <Route path={routes.HOME} element={<Home />} />
-        <Route path={routes.MOVIES} element={<Movies />} />
-        <Route path="*" element={<NotFound />} />
-  </Routes>*/}
+      {
+        <Routes>
+          <Route path={routes.HOME} element={<Outlet />} />
+          <Route index element={<Home />} />
+          <Route path={routes.MOVIES} element={<Movies />} />
+          <Route path={routes.MOVIES_ID} element={<MovieDetail />}>
+            <Route path={routes.CAST} element={<Cast />} />
+            <Route path={routes.REVIEWS} element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Navigate to={routes.HOME} replace />} />
+        </Routes>
+      }
     </div>
   );
 };
 /*
+
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/movies">Movies</Link>
+        </li>
+      </ul>
+
+      
     <ul>
         <li>
           <Link to="/">Home</Link>
