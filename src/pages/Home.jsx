@@ -1,4 +1,5 @@
 import { getMovieTrending } from '../components/services/filmesFetch';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 export const Home = () => {
   const [films, setFilms] = useState(null);
@@ -21,16 +22,13 @@ export const Home = () => {
   }, []);
   if (!films) return;
   return (
-    <>
-      Home
-      <ul>
-        {films.map(film => (
-          <li key={film.id} film={film}>
-            {film.title}
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul>
+      {films.map(({ id, title }) => (
+        <li key={id}>
+          <Link to={`/movies/${id}`}>{title}</Link>
+        </li>
+      ))}
+    </ul>
   );
 };
 
