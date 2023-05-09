@@ -18,12 +18,12 @@ export const Home = () => {
       }
     }
     dataToFilms();
-  }, [films]);
+  }, []);
 
   return (
     <>
       Home
-      <div>{}</div>
+      <div>{() => films[0]}</div>
     </>
   );
 };
