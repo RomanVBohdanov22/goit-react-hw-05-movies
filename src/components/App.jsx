@@ -21,7 +21,6 @@ const appStyles = {
 export const App = () => {
   return (
     <div style={appStyles}>
-      goit-react-hw-05-movies
       {
         <Routes>
           <Route path={routes.HOME} element={<Layout />}>
@@ -40,7 +39,7 @@ export const App = () => {
 };
 
 /*
-
+goit-react-hw-05-movies
 
 */
 /*
