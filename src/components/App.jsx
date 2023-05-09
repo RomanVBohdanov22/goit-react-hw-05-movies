@@ -7,7 +7,6 @@ import { Reviews } from '../pages/Reviews';
 import { Layout } from '../layout/Layout';
 
 import { routes } from '../routes';
-import * as FilmService from './services/filmesFetch';
 
 const appStyles = {
   height: '100vh',
@@ -19,47 +18,6 @@ const appStyles = {
   color: '#010101',
 };
 export const App = () => {
-  /*
-  FilmService.getMovieTrending()
-    .then(data => {
-      console.log('data', data);
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
-  const query = 'Batman';
-
-  FilmService.getMovieOnQuery(query)
-    .then(data => {
-      console.log(query, data);
-    })
-    .catch(error => {
-      console.log(error.message);
-    }); */
-  const testID = 414906;
-  FilmService.getMovieDetails(testID)
-    .then(data => {
-      console.log(testID, data);
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
-  /*
-  FilmService.getMovieCredits(testID)
-    .then(data => {
-      console.log('cred', testID, data);
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
-
-  FilmService.getMovieRewievs(testID)
-    .then(data => {
-      console.log('rev', testID, data);
-    })
-    .catch(error => {
-      console.log(error.message);
-    });*/
   return (
     <div style={appStyles}>
       goit-react-hw-05-movies
