@@ -1,7 +1,7 @@
 import { getMovieTrending } from '../components/services/filmesFetch';
 import { useState, useEffect } from 'react';
 export const Home = () => {
-  const [films, setFilms] = useState([]);
+  const [films, setFilms] = useState(null);
   useEffect(() => {
     async function dataToFilms() {
       try {
@@ -19,14 +19,14 @@ export const Home = () => {
     }
     dataToFilms();
   }, []);
-
+  if (!films) return;
   return (
     <>
       Home
       <ul>
         {films.map(film => (
           <li key={film.id} film={film}>
-            ${film}
+            {film.title}
           </li>
         ))}
       </ul>
