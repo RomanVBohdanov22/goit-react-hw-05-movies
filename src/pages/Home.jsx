@@ -11,7 +11,7 @@ export const Home = () => {
           alert(`What?`);
           return;
         }
-        console.log(results);
+        //console.log(results);
         setFilms(results);
       } catch (error) {
         alert(error.message);
